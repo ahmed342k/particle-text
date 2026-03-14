@@ -15,7 +15,6 @@ function xrRenderHeader(){
       <div class="nav-links">
         <a class="nav-link" href="index.html">الرئيسية</a>
         <a class="nav-link" href="cart.html">السلة</a>
-        <a class="nav-link" href="login.html">تسجيل دخول الإدارة</a>
       </div>
 
       <div class="nav-actions">
