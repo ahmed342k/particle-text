@@ -19,14 +19,38 @@ function xrRenderHeader(){
       </div>
 
       <div class="nav-actions">
-        <button class="ghost-btn" id="themeBtn">تغيير الوضع</button>
+        <button class="theme-toggle" id="themeBtn" aria-label="تغيير الوضع">
+          <span class="toggle-track-icon sun-mark">☀</span>
+          <span class="toggle-track-icon moon-mark">🌙</span>
+          <span class="toggle-thumb">
+            <span class="thumb-icon">☀</span>
+          </span>
+        </button>
+
         <a class="primary-btn" href="cart.html">السلة (<span id="cartCountTop">${xrCartCount()}</span>)</a>
       </div>
     </div>
   `;
 
   const btn = document.getElementById("themeBtn");
-  if(btn) btn.addEventListener("click", xrThemeToggle);
+  if(btn){
+    const thumbIcon = btn.querySelector(".thumb-icon");
+
+    function updateThemeIcon(){
+      if(document.body.classList.contains("light")){
+        thumbIcon.textContent = "☀";
+      }else{
+        thumbIcon.textContent = "🌙";
+      }
+    }
+
+    updateThemeIcon();
+
+    btn.addEventListener("click", () => {
+      xrThemeToggle();
+      updateThemeIcon();
+    });
+  }
 }
 
 function xrRenderFooter(){
