@@ -1,6 +1,6 @@
-function xrRenderHeader(){
+function xrRenderHeader() {
   const header = document.getElementById("siteHeader");
-  if(!header) return;
+  if (!header) return;
 
   header.innerHTML = `
     <div class="container nav">
@@ -12,8 +12,7 @@ function xrRenderHeader(){
         </div>
       </div>
 
-      <div class="nav-links">
-        <a class="nav-link" href="index.html">الرئيسية</a>
+      <div class="nav-center">
         <a class="nav-link" href="#productsSection">المنتجات</a>
         <a class="nav-link" href="#aboutStoreSection">تعريف المتجر</a>
         <a class="nav-link" href="#articlesSection">المقالات</a>
@@ -33,13 +32,13 @@ function xrRenderHeader(){
   `;
 
   const btn = document.getElementById("themeBtn");
-  if(btn){
+  if (btn) {
     const thumbIcon = btn.querySelector(".thumb-icon");
 
-    function updateThemeIcon(){
-      if(document.body.classList.contains("light")){
+    function updateThemeIcon() {
+      if (document.body.classList.contains("light")) {
         thumbIcon.textContent = "☀";
-      }else{
+      } else {
         thumbIcon.textContent = "🌙";
       }
     }
@@ -53,9 +52,9 @@ function xrRenderHeader(){
   }
 }
 
-function xrRenderFooter(){
+function xrRenderFooter() {
   const footer = document.getElementById("siteFooter");
-  if(!footer) return;
+  if (!footer) return;
 
   footer.innerHTML = `
     <div class="container">
