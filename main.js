@@ -14,6 +14,9 @@ function xrRenderHeader(){
 
       <div class="nav-links">
         <a class="nav-link" href="index.html">الرئيسية</a>
+        <a class="nav-link" href="#productsSection">المنتجات</a>
+        <a class="nav-link" href="#aboutStoreSection">تعريف المتجر</a>
+        <a class="nav-link" href="#articlesSection">المقالات</a>
         <a class="nav-link" href="cart.html">السلة</a>
       </div>
 
@@ -25,8 +28,6 @@ function xrRenderHeader(){
             <span class="thumb-icon">☀</span>
           </span>
         </button>
-
-        <a class="primary-btn" href="cart.html">السلة (<span id="cartCountTop">${xrCartCount()}</span>)</a>
       </div>
     </div>
   `;
@@ -69,14 +70,10 @@ function xrRenderFooter(){
   `;
 }
 
-function xrRefreshCartTop(){
-  const el = document.getElementById("cartCountTop");
-  if(el) el.textContent = xrCartCount();
-}
+function xrRefreshCartTop(){}
 
 document.addEventListener("DOMContentLoaded", () => {
   xrThemeInit();
   xrRenderHeader();
   xrRenderFooter();
-  xrRefreshCartTop();
 });
