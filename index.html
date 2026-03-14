@@ -1,62 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XR Store | متجر XR</title>
-  <meta name="description" content="متجر XR المتنوع لبيع الإكسسوارات والأجهزة البسيطة مثل مبردات الهاتف والكفرات والشواحن والسماعات.">
-  <meta name="keywords" content="XR, متجر, اكسسوارات, مبرد هاتف, كفر, شاحن, سماعات">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="متجر XR المتنوع لبيع الإكسسوارات والأجهزة البسيطة مثل مبردات الهاتف والكفرات والشواحن والسماعات." />
+  <meta name="keywords" content="XR, متجر, اكسسوارات, مبرد هاتف, كفر, شاحن, سماعات" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar" id="siteHeader"></header>
 
   <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="card hero-main">
-          <div class="badge">XR Store</div>
-          <h2>متجر XR للإكسسوارات والأجهزة البسيطة</h2>
-          <p>
-            واجهة متجر أنيقة وعملية لعرض المنتجات، مع فلترة حسب السعر والتقييم،
-            وصفحات أساسية وسلة شراء منظمة وتجربة سهلة للموبايل.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-btn" href="#productsSection">ابدأ التسوق</a>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="card side-box">
-            <h3>أقسام متنوعة</h3>
-            <p>مبردات - كفرات - شواحن - كيابل - سماعات - حوامل هاتف.</p>
-            <div class="stats">
-              <div class="stat"><strong>+6</strong><span>أقسام</span></div>
-              <div class="stat"><strong>24/7</strong><span>عرض</span></div>
-              <div class="stat"><strong>XR</strong><span>Store</span></div>
-            </div>
-          </div>
-
-          <div class="card side-box">
-            <h3>شراء سهل</h3>
-            <p>اختيار المنتج، تحديد العدد، ثم إرسال الطلب بسهولة من داخل الموقع.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="productsSection">
+    <!-- البداية: البحث والمنتجات -->
+    <section class="section top-products" id="productsSection">
       <div class="section-head">
         <div>
           <h3>المنتجات</h3>
-          <p>اختر القسم المناسب وابحث بسهولة عن المنتج المطلوب</p>
+          <p>ابحث واختر المنتج المناسب بسهولة</p>
         </div>
       </div>
 
       <div class="toolbar">
-        <input class="input" id="searchInput" type="text" placeholder="ابحث عن منتج...">
-        <input class="input" id="minPrice" type="number" placeholder="أقل سعر">
-        <input class="input" id="maxPrice" type="number" placeholder="أعلى سعر">
+        <input class="input" id="searchInput" type="text" placeholder="ابحث عن منتج..." />
+        <input class="input" id="minPrice" type="number" placeholder="أقل سعر" />
+        <input class="input" id="maxPrice" type="number" placeholder="أعلى سعر" />
         <select class="select" id="minRating">
           <option value="0">كل التقييمات</option>
           <option value="3">3 نجوم فأكثر</option>
@@ -76,66 +44,61 @@
       <div class="grid" id="productsWrap"></div>
     </section>
 
+    <!-- بانر بسيط بعد المنتجات -->
+    <section class="hero compact-hero">
+      <div class="hero-grid single-hero">
+        <div class="card hero-main">
+          <div class="badge">XR Store</div>
+          <h2>متجر XR للإكسسوارات والأجهزة البسيطة</h2>
+          <p>
+            اختر المنتج، حدد العدد، وأرسل الطلب بسهولة من داخل الموقع.
+            الدفع يكون عند الاستلام، والتصفح مصمم ليكون مرتب وسهل على الموبايل.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="cart.html">فتح السلة</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تعريف المتجر بأسفل الموقع -->
     <section class="section" id="aboutStoreSection">
       <div class="section-head">
         <div>
           <h3>تعريف المتجر</h3>
-          <p>نبذة مختصرة عن XR Store وخدماته</p>
+          <p>نبذة مختصرة عن XR Store</p>
         </div>
       </div>
 
       <div class="features">
         <div class="card feature">
           <h4>من هو XR Store؟</h4>
-          <p>XR Store متجر متخصص بعرض الإكسسوارات والأجهزة البسيطة بشكل أنيق ومرتب وسهل الاستخدام.</p>
+          <p>XR Store متجر متخصص بعرض الإكسسوارات والأجهزة البسيطة بشكل أنيق وواضح وسهل التصفح.</p>
         </div>
         <div class="card feature">
           <h4>ماذا يوفر؟</h4>
           <p>يوفر منتجات مثل مبردات الهاتف والكفرات والشواحن والكيابل والسماعات والحوامل مع عرض واضح للسعر والتقييم.</p>
         </div>
         <div class="card feature">
-          <h4>كيف يتم الطلب؟</h4>
+          <h4>طريقة الطلب</h4>
           <p>يختار الزائر المنتج والعدد ثم يرسل الطلب من داخل الموقع، ويكون الدفع عند الاستلام.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h3>لماذا XR؟</h3>
-          <p>واجهة متجر جاهزة للتطوير وسهلة الاستخدام</p>
-        </div>
-      </div>
-
-      <div class="features">
-        <div class="card feature">
-          <h4>تصميم أنيق</h4>
-          <p>واجهة حديثة وسريعة ومناسبة للموبايل وسهلة التعديل لاحقاً.</p>
-        </div>
-        <div class="card feature">
-          <h4>اختيار سهل</h4>
-          <p>فلترة حسب السعر والتقييم مع عرض مرتب للمنتجات بشكل واضح.</p>
-        </div>
-        <div class="card feature">
-          <h4>طلب مباشر</h4>
-          <p>الطلب يتم من داخل الموقع بدون دفع إلكتروني، والدفع يكون عند الاستلام.</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- المقالات بأسفل الموقع -->
     <section class="section" id="articlesSection">
       <div class="section-head">
         <div>
           <h3>المقالات</h3>
-          <p>محتوى تعريفي ونصائح مفيدة في نهاية الموقع</p>
+          <p>محتوى تعريفي ونصائح مفيدة</p>
         </div>
       </div>
 
       <div class="features">
         <div class="card feature">
           <h4>كيف تختار الإكسسوار المناسب؟</h4>
-          <p>اختيار الإكسسوار المناسب يعتمد على جودة التصنيع، التوافق مع الجهاز، وسهولة الاستخدام اليومي.</p>
+          <p>اختيار الإكسسوار المناسب يعتمد على الجودة، التوافق مع الجهاز، وسهولة الاستخدام اليومي.</p>
         </div>
         <div class="card feature">
           <h4>أهمية مبرد الهاتف</h4>
