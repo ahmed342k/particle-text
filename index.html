@@ -11,58 +11,93 @@
 <body>
   <header class="topbar" id="siteHeader"></header>
 
-  <main class="container">
-    <!-- البداية: البحث والمنتجات -->
-    <section class="section top-products" id="productsSection">
-      <div class="section-head">
-        <div>
-          <h3>المنتجات</h3>
-          <p>ابحث واختر المنتج المناسب بسهولة</p>
-        </div>
-      </div>
+  <main class="container home-main">
+    <!-- بانر العروض -->
+    <section class="promo-section">
+      <div class="promo-banner card">
+        <button class="promo-arrow promo-arrow-right" type="button">‹</button>
 
-      <div class="toolbar">
-        <input class="input" id="searchInput" type="text" placeholder="ابحث عن منتج..." />
-        <input class="input" id="minPrice" type="number" placeholder="أقل سعر" />
-        <input class="input" id="maxPrice" type="number" placeholder="أعلى سعر" />
-        <select class="select" id="minRating">
-          <option value="0">كل التقييمات</option>
-          <option value="3">3 نجوم فأكثر</option>
-          <option value="4">4 نجوم فأكثر</option>
-          <option value="4.5">4.5 نجوم فأكثر</option>
-        </select>
-        <select class="select" id="sortBy">
-          <option value="default">الترتيب الافتراضي</option>
-          <option value="price-asc">السعر من الأقل</option>
-          <option value="price-desc">السعر من الأعلى</option>
-          <option value="rating-desc">الأعلى تقييماً</option>
-          <option value="name-asc">الاسم</option>
-        </select>
-      </div>
+        <div class="promo-content">
+          <div class="promo-text">
+            <h2>عروض نهاية الأسبوع: خصومات تصل إلى 50%!</h2>
+            <p>اكتشف تشكيلة مختارة من الإكسسوارات والأجهزة البسيطة بأفضل الأسعار.</p>
+            <a href="#productsSection" class="primary-btn promo-btn">تسوق الآن</a>
+          </div>
 
-      <div class="categories" id="categoriesWrap"></div>
-      <div class="grid" id="productsWrap"></div>
-    </section>
-
-    <!-- بانر بسيط بعد المنتجات -->
-    <section class="hero compact-hero">
-      <div class="hero-grid single-hero">
-        <div class="card hero-main">
-          <div class="badge">XR Store</div>
-          <h2>متجر XR للإكسسوارات والأجهزة البسيطة</h2>
-          <p>
-            اختر المنتج، حدد العدد، وأرسل الطلب بسهولة من داخل الموقع.
-            الدفع يكون عند الاستلام، والتصفح مصمم ليكون مرتب وسهل على الموبايل.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-btn" href="cart.html">فتح السلة</a>
+          <div class="promo-media">
+            <div class="promo-item">⌚</div>
+            <div class="promo-item">🎧</div>
+            <div class="promo-item">🖱️</div>
+            <div class="promo-item">🔋</div>
           </div>
         </div>
+
+        <button class="promo-arrow promo-arrow-left" type="button">›</button>
       </div>
     </section>
 
-    <!-- تعريف المتجر بأسفل الموقع -->
-    <section class="section" id="aboutStoreSection">
+    <!-- المنتجات -->
+    <section class="section products-layout" id="productsSection">
+      <div class="products-header">
+        <div>
+          <h3>منتجاتنا لهذا اليوم</h3>
+          <p>تصفح المنتجات وابحث بسهولة عن ما يناسبك</p>
+        </div>
+      </div>
+
+      <div class="products-body">
+        <!-- الفلاتر -->
+        <aside class="filters-panel card">
+          <div class="filters-title">الفلاتر</div>
+
+          <div class="filter-box">
+            <label class="filter-label" for="searchInput">البحث</label>
+            <input class="input" id="searchInput" type="text" placeholder="ابحث عن منتج..." />
+          </div>
+
+          <div class="filter-box">
+            <label class="filter-label" for="minPrice">السعر</label>
+            <div class="price-grid">
+              <input class="input" id="minPrice" type="number" placeholder="أقل سعر" />
+              <input class="input" id="maxPrice" type="number" placeholder="أعلى سعر" />
+            </div>
+          </div>
+
+          <div class="filter-box">
+            <label class="filter-label" for="minRating">التقييم</label>
+            <select class="select" id="minRating">
+              <option value="0">كل التقييمات</option>
+              <option value="3">3 نجوم فأكثر</option>
+              <option value="4">4 نجوم فأكثر</option>
+              <option value="4.5">4.5 نجوم فأكثر</option>
+            </select>
+          </div>
+
+          <div class="filter-box">
+            <label class="filter-label" for="sortBy">الترتيب</label>
+            <select class="select" id="sortBy">
+              <option value="default">الترتيب الافتراضي</option>
+              <option value="price-asc">السعر من الأقل</option>
+              <option value="price-desc">السعر من الأعلى</option>
+              <option value="rating-desc">الأعلى تقييماً</option>
+              <option value="name-asc">الاسم</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- قائمة المنتجات -->
+        <div class="products-area">
+          <div class="categories-wrap">
+            <div class="categories" id="categoriesWrap"></div>
+          </div>
+
+          <div class="grid products-grid" id="productsWrap"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تعريف المتجر -->
+    <section class="section info-section" id="aboutStoreSection">
       <div class="section-head">
         <div>
           <h3>تعريف المتجر</h3>
@@ -73,7 +108,7 @@
       <div class="features">
         <div class="card feature">
           <h4>من هو XR Store؟</h4>
-          <p>XR Store متجر متخصص بعرض الإكسسوارات والأجهزة البسيطة بشكل أنيق وواضح وسهل التصفح.</p>
+          <p>XR Store متجر متخصص بعرض الإكسسوارات والأجهزة البسيطة بشكل مرتب وسهل التصفح على الهاتف والكمبيوتر.</p>
         </div>
         <div class="card feature">
           <h4>ماذا يوفر؟</h4>
@@ -86,12 +121,12 @@
       </div>
     </section>
 
-    <!-- المقالات بأسفل الموقع -->
-    <section class="section" id="articlesSection">
+    <!-- المقالات -->
+    <section class="section info-section" id="articlesSection">
       <div class="section-head">
         <div>
           <h3>المقالات</h3>
-          <p>محتوى تعريفي ونصائح مفيدة</p>
+          <p>نصائح ومعلومات مفيدة قبل الشراء</p>
         </div>
       </div>
 
@@ -102,7 +137,7 @@
         </div>
         <div class="card feature">
           <h4>أهمية مبرد الهاتف</h4>
-          <p>مبرد الهاتف يساعد على تقليل الحرارة أثناء اللعب أو الاستخدام الطويل، وهذا يحسن الأداء ويحافظ على الجهاز.</p>
+          <p>مبرد الهاتف يساعد على تقليل الحرارة أثناء اللعب أو الاستخدام الطويل ويحافظ على الأداء.</p>
         </div>
         <div class="card feature">
           <h4>نصائح قبل الشراء</h4>
