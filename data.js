@@ -5,7 +5,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "مبرد هاتف XR Ice Pro",
     desc: "مبرد عملي وخفيف لتقليل حرارة الهاتف أثناء اللعب والاستخدام الطويل.",
     price: 18,
+    oldPrice: null,
+    isOnSale: false,
     rating: 4.7,
+    stock: 8,
     sizes: [],
     features: ["تبريد سريع", "تركيب سهل", "صوت منخفض"],
     images: [
@@ -21,7 +24,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "كفر شفاف مقاوم XR",
     desc: "كفر أنيق شفاف يحمي الهاتف من الصدمات والخدوش اليومية.",
     price: 9,
+    oldPrice: 12,
+    isOnSale: true,
     rating: 4.4,
+    stock: 0,
     sizes: ["iPhone", "Samsung", "Xiaomi"],
     features: ["شفاف", "مقاوم للصدمات", "خفيف"],
     images: [
@@ -37,7 +43,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "شاحن سريع XR 25W",
     desc: "شاحن سريع مناسب للاستخدام اليومي مع حجم صغير وسرعة ممتازة.",
     price: 14,
+    oldPrice: null,
+    isOnSale: false,
     rating: 4.8,
+    stock: 12,
     sizes: [],
     features: ["شحن سريع", "حجم صغير", "حماية من الحرارة"],
     images: [
@@ -53,7 +62,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "كيبل XR Type-C",
     desc: "كيبل قوي ومرن للشحن ونقل البيانات بسرعة وثبات.",
     price: 7,
+    oldPrice: null,
+    isOnSale: false,
     rating: 4.3,
+    stock: 15,
     sizes: ["1m", "2m"],
     features: ["سريع", "قوي", "عمر طويل"],
     images: [
@@ -69,7 +81,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "حامل هاتف للسيارة XR",
     desc: "حامل عملي وثابت للسيارة مع تركيب سريع وتحكم مريح.",
     price: 11,
+    oldPrice: 15,
+    isOnSale: true,
     rating: 4.5,
+    stock: 5,
     sizes: [],
     features: ["ثبات قوي", "سهل التركيب", "دوران مرن"],
     images: [
@@ -85,7 +100,10 @@ const XR_DEFAULT_PRODUCTS = [
     name: "سماعة XR Lite",
     desc: "سماعة بسيطة بجودة جيدة للمكالمات والاستماع اليومي.",
     price: 16,
+    oldPrice: null,
+    isOnSale: false,
     rating: 4.2,
+    stock: 9,
     sizes: [],
     features: ["صوت واضح", "وزن خفيف", "شكل أنيق"],
     images: [
@@ -107,17 +125,32 @@ const XR_CATEGORIES = [
   { key: "headphones", label: "سماعات" }
 ];
 
+function xrNormalizeProducts(products){
+  return products.map(p => ({
+    ...p,
+    oldPrice: p.oldPrice ?? null,
+    isOnSale: !!p.isOnSale,
+    stock: typeof p.stock === "number" ? p.stock : 0,
+    images: Array.isArray(p.images) && p.images.length ? p.images : [""],
+    features: Array.isArray(p.features) ? p.features : [],
+    sizes: Array.isArray(p.sizes) ? p.sizes : []
+  }));
+}
+
 function xrGetProducts(){
   const saved = localStorage.getItem("xr_products");
   if(saved){
-    try{ return JSON.parse(saved); }catch(e){}
+    try{
+      return xrNormalizeProducts(JSON.parse(saved));
+    }catch(e){}
   }
-  localStorage.setItem("xr_products", JSON.stringify(XR_DEFAULT_PRODUCTS));
-  return [...XR_DEFAULT_PRODUCTS];
+  const data = xrNormalizeProducts(XR_DEFAULT_PRODUCTS);
+  localStorage.setItem("xr_products", JSON.stringify(data));
+  return data;
 }
 
 function xrSaveProducts(products){
-  localStorage.setItem("xr_products", JSON.stringify(products));
+  localStorage.setItem("xr_products", JSON.stringify(xrNormalizeProducts(products)));
 }
 
 function xrGetCart(){
@@ -168,13 +201,16 @@ function xrShowNotice(text){
 }
 
 function xrThemeInit(){
-  const mode = localStorage.getItem("xr_theme") || "dark";
+  const mode = localStorage.getItem("xr_theme") || "light";
   if(mode === "light") document.body.classList.add("light");
 }
 
 function xrThemeToggle(){
   document.body.classList.toggle("light");
-  localStorage.setItem("xr_theme", document.body.classList.contains("light") ? "light" : "dark");
+  localStorage.setItem(
+    "xr_theme",
+    document.body.classList.contains("light") ? "light" : "dark"
+  );
 }
 
 function xrRequireAdmin(){
@@ -182,4 +218,37 @@ function xrRequireAdmin(){
   if(logged !== "yes"){
     location.href = "login.html";
   }
+}
+
+function xrGetOrders(){
+  const saved = localStorage.getItem("xr_orders");
+  if(saved){
+    try{ return JSON.parse(saved); }catch(e){}
+  }
+  return [];
+}
+
+function xrSaveOrders(list){
+  localStorage.setItem("xr_orders", JSON.stringify(list));
+}
+
+function xrGetReservations(){
+  const saved = localStorage.getItem("xr_reservations");
+  if(saved){
+    try{ return JSON.parse(saved); }catch(e){}
+  }
+  return [];
+}
+
+function xrSaveReservations(list){
+  localStorage.setItem("xr_reservations", JSON.stringify(list));
+}
+
+function xrCurrency(value){
+  return `$${Number(value).toFixed(0)}`;
+}
+
+function xrDiscountPercent(oldPrice, price){
+  if(!oldPrice || !price || oldPrice <= price) return 0;
+  return Math.round(((oldPrice - price) / oldPrice) * 100);
 }
