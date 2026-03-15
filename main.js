@@ -3,96 +3,80 @@ function xrRenderHeader() {
   if (!header) return;
 
   header.innerHTML = `
-    <div class="container nav desktop-nav">
-      <div class="header-logo-wrap">
-        <div class="logo">XR</div>
-        <div class="brand-text">
-          <h1>XR Store</h1>
-          <p>متجر متنوع للإكسسوارات والأجهزة البسيطة</p>
-        </div>
-      </div>
+    <div class="container site-header">
+      <div class="header-top">
+        <div class="header-brand">
+          <div class="logo">XR</div>
 
-      <div class="header-center-links">
-        <a class="nav-link" href="#productsSection">الصفحة الرئيسية</a>
-        <a class="nav-link" href="#productsSection">الأقسام</a>
-        <a class="nav-link" href="#articlesSection">العروض</a>
-        <a class="nav-link" href="cart.html">سلة التسوق</a>
-      </div>
-
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeBtn" aria-label="تغيير الوضع">
-          <span class="toggle-track-icon sun-mark">☀</span>
-          <span class="toggle-track-icon moon-mark">🌙</span>
-          <span class="toggle-thumb">
-            <span class="thumb-icon">☀</span>
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <div class="container mobile-appbar">
-      <div class="mobile-top">
-        <div class="mobile-brand">
-          <div class="mobile-logo-text">
-            <div class="mobile-store-name">XR Store</div>
-            <div class="mobile-store-sub">متجر متنوع للإكسسوارات والأجهزة البسيطة</div>
+          <div class="brand-text">
+            <h1>XR Store</h1>
+            <p>متجر متنوع للإكسسوارات والأجهزة البسيطة</p>
           </div>
-          <div class="logo mobile-logo">XR</div>
         </div>
 
-        <div class="mobile-icons">
-          <a class="mobile-icon-btn" href="cart.html" aria-label="السلة">🛒</a>
-          <button class="mobile-icon-btn mobile-theme-placeholder" type="button" aria-label="زر وهمي">⚙</button>
-          <a class="mobile-icon-btn" href="#articlesSection" aria-label="العروض">٪</a>
-          <a class="mobile-icon-btn" href="#productsSection" aria-label="الرئيسية">⌂</a>
+        <div class="header-theme">
+          <button class="theme-toggle" id="themeBtn" aria-label="تغيير الوضع">
+            <span class="toggle-track-icon sun-mark">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="12" y1="1.5" x2="12" y2="5"></line>
+                <line x1="12" y1="19" x2="12" y2="22.5"></line>
+                <line x1="1.5" y1="12" x2="5" y2="12"></line>
+                <line x1="19" y1="12" x2="22.5" y2="12"></line>
+                <line x1="4.2" y1="4.2" x2="6.8" y2="6.8"></line>
+                <line x1="17.2" y1="17.2" x2="19.8" y2="19.8"></line>
+                <line x1="17.2" y1="6.8" x2="19.8" y2="4.2"></line>
+                <line x1="4.2" y1="19.8" x2="6.8" y2="17.2"></line>
+              </svg>
+            </span>
+
+            <span class="toggle-track-icon moon-mark">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.2A8.5 8.5 0 0 1 9.8 4 9 9 0 1 0 20 14.2Z"></path>
+              </svg>
+            </span>
+
+            <span class="toggle-thumb">
+              <span class="thumb-icon thumb-sun">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <line x1="12" y1="1.5" x2="12" y2="5"></line>
+                  <line x1="12" y1="19" x2="12" y2="22.5"></line>
+                  <line x1="1.5" y1="12" x2="5" y2="12"></line>
+                  <line x1="19" y1="12" x2="22.5" y2="12"></line>
+                  <line x1="4.2" y1="4.2" x2="6.8" y2="6.8"></line>
+                  <line x1="17.2" y1="17.2" x2="19.8" y2="19.8"></line>
+                  <line x1="17.2" y1="6.8" x2="19.8" y2="4.2"></line>
+                  <line x1="4.2" y1="19.8" x2="6.8" y2="17.2"></line>
+                </svg>
+              </span>
+
+              <span class="thumb-icon thumb-moon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 14.2A8.5 8.5 0 0 1 9.8 4 9 9 0 1 0 20 14.2Z"></path>
+                </svg>
+              </span>
+            </span>
+          </button>
         </div>
       </div>
 
-      <div class="mobile-theme-row">
-        <button class="theme-toggle" id="themeBtnMobile" aria-label="تغيير الوضع">
-          <span class="toggle-track-icon sun-mark">☀</span>
-          <span class="toggle-track-icon moon-mark">🌙</span>
-          <span class="toggle-thumb">
-            <span class="thumb-icon">☀</span>
-          </span>
-        </button>
-      </div>
+      <nav class="header-nav">
+        <a class="nav-link" href="#productsSection">المنتجات</a>
+        <a class="nav-link" href="#offersSection">العروض</a>
+        <a class="nav-link" href="#aboutStoreSection">تعريف المتجر</a>
+        <a class="nav-link" href="#articlesSection">المقالات</a>
+        <a class="nav-link" href="cart.html">السلة</a>
+      </nav>
     </div>
   `;
 
-  const desktopBtn = document.getElementById("themeBtn");
-  const mobileBtn = document.getElementById("themeBtnMobile");
-
-  function bindThemeButton(btn) {
-    if (!btn) return;
-    const thumbIcon = btn.querySelector(".thumb-icon");
-
-    function updateThemeIcon() {
-      if (document.body.classList.contains("light")) {
-        thumbIcon.textContent = "☀";
-      } else {
-        thumbIcon.textContent = "🌙";
-      }
-    }
-
-    updateThemeIcon();
-
+  const btn = document.getElementById("themeBtn");
+  if (btn) {
     btn.addEventListener("click", () => {
       xrThemeToggle();
-      updateThemeIcon();
-
-      const otherBtn = btn.id === "themeBtn" ? mobileBtn : desktopBtn;
-      if (otherBtn) {
-        const otherIcon = otherBtn.querySelector(".thumb-icon");
-        if (otherIcon) {
-          otherIcon.textContent = document.body.classList.contains("light") ? "☀" : "🌙";
-        }
-      }
     });
   }
-
-  bindThemeButton(desktopBtn);
-  bindThemeButton(mobileBtn);
 }
 
 function xrRenderFooter() {
