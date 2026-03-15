@@ -89,26 +89,29 @@ body.light .topbar{
 /* ===== الهيدر ===== */
 
 .site-header{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
   padding:18px 0 16px;
 }
 
 .header-top{
   display:grid;
-  grid-template-columns:auto 1fr auto;
+  grid-template-columns:90px 1fr 128px;
   align-items:center;
   gap:16px;
+  margin-bottom:16px;
 }
 
-.header-brand{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  align-items:center;
-  gap:14px;
-  min-width:0;
-  grid-column:1 / span 2;
+.header-logo-box{
+  display:flex;
+  justify-content:flex-start;
+}
+
+.header-title-box{
+  text-align:center;
+}
+
+.header-theme-box{
+  display:flex;
+  justify-content:flex-end;
 }
 
 .logo{
@@ -122,44 +125,35 @@ body.light .topbar{
   justify-content:center;
   font-size:40px;
   font-weight:900;
-  flex-shrink:0;
   box-shadow:var(--shadow);
+  flex-shrink:0;
 }
 
-.brand-text h1{
+.header-title-box h1{
   font-size:3rem;
   line-height:1.05;
   margin-bottom:8px;
   font-weight:900;
 }
 
-.brand-text p{
+.header-title-box p{
   color:var(--muted);
   font-size:1rem;
   line-height:1.6;
 }
 
-.header-theme{
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-}
-
 .header-nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
   gap:12px;
-  flex-wrap:nowrap;
 }
 
 .nav-link{
-  flex:1;
   text-align:center;
   background:var(--card);
   border:1px solid var(--line);
   color:var(--text);
-  padding:18px 14px;
+  padding:18px 12px;
   border-radius:22px;
   font-size:1rem;
   font-weight:800;
@@ -659,20 +653,19 @@ body:not(.light) .price{
   background:var(--card);
 }
 
-/* ===== التابلت ===== */
+/* ===== تابلت ===== */
 
 @media (max-width: 1024px){
-  .brand-text h1{
+  .header-top{
+    grid-template-columns:90px 1fr 128px;
+  }
+
+  .header-title-box h1{
     font-size:2.35rem;
   }
 
   .header-nav{
-    gap:10px;
-  }
-
-  .nav-link{
-    padding:16px 12px;
-    font-size:.95rem;
+    grid-template-columns:repeat(3,1fr);
   }
 
   .offers-banner-content{
@@ -700,7 +693,7 @@ body:not(.light) .price{
   }
 }
 
-/* ===== الهاتف ===== */
+/* ===== موبايل ===== */
 
 @media (max-width: 680px){
   .container{
@@ -709,20 +702,23 @@ body:not(.light) .price{
 
   .site-header{
     padding:14px 0 16px;
-    gap:14px;
   }
 
   .header-top{
-    grid-template-columns:1fr auto;
+    grid-template-columns:1fr;
+    justify-items:center;
     gap:12px;
+    margin-bottom:14px;
   }
 
-  .header-brand{
-    grid-column:1 / span 2;
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:12px;
-    align-items:center;
+  .header-logo-box,
+  .header-theme-box{
+    justify-content:center;
+  }
+
+  .header-brand,
+  .header-title-box{
+    text-align:center;
   }
 
   .logo{
@@ -732,19 +728,25 @@ body:not(.light) .price{
     border-radius:22px;
   }
 
-  .brand-text h1{
-    font-size:1.85rem;
+  .header-title-box h1{
+    font-size:2rem;
     margin-bottom:6px;
   }
 
-  .brand-text p{
+  .header-title-box p{
     font-size:.92rem;
     line-height:1.6;
   }
 
-  .header-theme{
-    grid-column:1 / span 2;
-    justify-content:center;
+  .header-nav{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .nav-link{
+    width:100%;
+    padding:16px 10px;
+    font-size:.96rem;
   }
 
   .theme-toggle{
@@ -755,18 +757,6 @@ body:not(.light) .price{
   .theme-toggle .toggle-thumb{
     width:40px;
     height:40px;
-  }
-
-  .header-nav{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
-
-  .nav-link{
-    width:100%;
-    padding:16px 10px;
-    font-size:.96rem;
   }
 
   .offers-banner{
@@ -824,4 +814,4 @@ body:not(.light) .price{
     padding:9px 10px;
     font-size:.88rem;
   }
-  }
+    }
