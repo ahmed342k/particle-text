@@ -5,16 +5,16 @@ function xrRenderHeader() {
   header.innerHTML = `
     <div class="container site-header">
       <div class="header-top">
-        <div class="header-brand">
+        <div class="header-logo-box">
           <div class="logo">XR</div>
-
-          <div class="brand-text">
-            <h1>XR Store</h1>
-            <p>متجر متنوع للإكسسوارات والأجهزة البسيطة</p>
-          </div>
         </div>
 
-        <div class="header-theme">
+        <div class="header-title-box">
+          <h1>XR Store</h1>
+          <p>متجر متنوع للإكسسوارات والأجهزة البسيطة</p>
+        </div>
+
+        <div class="header-theme-box">
           <button class="theme-toggle" id="themeBtn" aria-label="تغيير الوضع">
             <span class="toggle-track-icon sun-mark">
               <svg viewBox="0 0 24 24" aria-hidden="true">
