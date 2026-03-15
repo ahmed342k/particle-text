@@ -12,27 +12,30 @@
   <header class="topbar" id="siteHeader"></header>
 
   <main class="container home-main">
-    <!-- بانر العروض -->
-    <section class="promo-section">
-      <div class="promo-banner card">
-        <button class="promo-arrow promo-arrow-right" type="button">‹</button>
+    <!-- العروض -->
+    <section class="section" id="offersSection">
+      <div class="section-head">
+        <div>
+          <h3>العروض والتخفيضات</h3>
+          <p>منتجات مميزة بأسعار مخفضة لفترة محدودة</p>
+        </div>
+      </div>
 
-        <div class="promo-content">
-          <div class="promo-text">
-            <h2>عروض نهاية الأسبوع: خصومات تصل إلى 50%!</h2>
-            <p>اكتشف تشكيلة مختارة من الإكسسوارات والأجهزة البسيطة بأفضل الأسعار.</p>
-            <a href="#productsSection" class="primary-btn promo-btn">تسوق الآن</a>
+      <div class="offers-banner card">
+        <div class="offers-banner-content">
+          <div class="offers-copy">
+            <span class="offers-chip">خصومات قوية</span>
+            <h2>عروض هذا الأسبوع بخصومات تصل إلى 50%</h2>
+            <p>تابع المنتجات المخفضة أولاً قبل نفاد الكمية.</p>
+            <a href="#productsSection" class="primary-btn">تصفح المنتجات</a>
           </div>
 
-          <div class="promo-media">
-            <div class="promo-item">⌚</div>
-            <div class="promo-item">🎧</div>
-            <div class="promo-item">🖱️</div>
-            <div class="promo-item">🔋</div>
+          <div class="offers-visual" aria-hidden="true">
+            <div class="shape-card shape-one"></div>
+            <div class="shape-card shape-two"></div>
+            <div class="shape-card shape-three"></div>
           </div>
         </div>
-
-        <button class="promo-arrow promo-arrow-left" type="button">›</button>
       </div>
     </section>
 
@@ -40,13 +43,12 @@
     <section class="section products-layout" id="productsSection">
       <div class="products-header">
         <div>
-          <h3>منتجاتنا لهذا اليوم</h3>
-          <p>تصفح المنتجات وابحث بسهولة عن ما يناسبك</p>
+          <h3>المنتجات</h3>
+          <p>ابحث واختر المنتج المناسب بسهولة</p>
         </div>
       </div>
 
       <div class="products-body">
-        <!-- الفلاتر -->
         <aside class="filters-panel card">
           <div class="filters-title">الفلاتر</div>
 
@@ -85,7 +87,6 @@
           </div>
         </aside>
 
-        <!-- قائمة المنتجات -->
         <div class="products-area">
           <div class="categories-wrap">
             <div class="categories" id="categoriesWrap"></div>
@@ -153,4 +154,4 @@
   <script src="main.js"></script>
   <script src="index.js"></script>
 </body>
-</html>
+        </html>
